@@ -6,57 +6,154 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/q_grey_text"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeErrorColor="@color/q_red"
+        app:boxStrokeWidthFocused="@color/q_blue"
+        app:helperText="HEX: A, B, C, D , E, F"
+        app:helperTextEnabled="true"
+        android:hint="Enter correct number, please..."
+        >
 
-    <EditText
-        android:id="@+id/fromBase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="@+id/input"
-        app:layout_constraintStart_toStartOf="@+id/input"
-        app:layout_constraintTop_toBottomOf="@+id/input" />
 
-    <EditText
-        android:id="@+id/toBase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="@+id/fromBase"
-        app:layout_constraintStart_toStartOf="@+id/fromBase"
-        app:layout_constraintTop_toBottomOf="@+id/fromBase" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextIn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/toBase"
-        app:layout_constraintStart_toStartOf="@+id/toBase"
-        app:layout_constraintTop_toBottomOf="@+id/toBase" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/textTvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="30dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/editTextLayout"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLayout" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btn_convert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTvResult">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Please write the input type:" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_bin_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="BIN" />
+
+            <Button
+                android:id="@+id/btn_dec_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DEC" />
+
+            <Button
+                android:id="@+id/btn_hex_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HEX" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="OCT" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btn_oct_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Please write the output converted data type:" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_bin_output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BIN" />
+
+            <Button
+                android:id="@+id/btn_dec_output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DEC" />
+
+            <Button
+                android:id="@+id/btn_hex_output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HEX" />
+
+            <Button
+                android:id="@+id/btn_oct_output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OCT" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_convert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="190dp"
+        android:text="CONVERT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
